@@ -4,8 +4,8 @@
 @rem (contributed by David Manura and Mike Pall)
 
 @setlocal
-@set MYCOMPILE=cl /nologo /MD /O2 /W3 /c /D_CRT_SECURE_NO_DEPRECATE
-@set MYLINK=link /nologo
+@set MYCOMPILE=cl /nologo /MD /O2 /Ot /Oy /Oi /W3 /c /D_CRT_SECURE_NO_DEPRECATE /GL
+@set MYLINK=link /nologo /LTCG
 @set MYMT=mt /nologo
 
 cd src
