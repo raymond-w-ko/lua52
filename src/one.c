@@ -66,6 +66,7 @@
 #ifndef MAKE_LUAC
 #include "lbaselib.c"
 #include "lbitlib.c"
+#include "lbit.c"
 #include "lcorolib.c"
 #include "ldblib.c"
 #include "liolib.c"
