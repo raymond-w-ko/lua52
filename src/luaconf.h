@@ -58,7 +58,9 @@
 #define LUA_USE_LONGLONG	/* assume support for long long */
 #endif
 
-
+#if defined(__ANDROID__) && defined(LUA_USE_STRTODHEX)
+#undef LUA_USE_STRTODHEX
+#endif
 
 /*
 @@ LUA_USE_POSIX includes all functionality listed as X/Open System
@@ -547,7 +549,11 @@
 ** without modifying the main part of the file.
 */
 
-
+#if __ANDROID__
+#define getlocaledecpoint() '.'
+#elif !defined(getlocaledecpoint)
+#define getlocaledecpoint() (localeconv()->decimal_point[0])
+#endif
 
 #endif
 
